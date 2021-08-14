@@ -20,7 +20,7 @@
                               @foreach($cart as $row)
 
 		<li class="cart_item clearfix">
-			<div class="cart_item_image text-center"><br><img src="{{URL::to($row->options->image_one)}}"  style="width: 70px; width: 70px;" alt=""></div>
+			<div class="cart_item_image text-center"><br><img src="{{URL::to($row->options->image1)}}"  style="width: 70px; width: 70px;" alt=""></div>
 			<div class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
 				<div class="cart_item_name cart_info_col">
 					<div class="cart_item_title">Name</div>
@@ -42,7 +42,7 @@
                 @else
                 <div class="cart_item_color cart_info_col">
 					<div class="cart_item_title">Size</div>
-					<div class="cart_item_text"> {{ $row->options->size }}</div>
+					<div class="cart_item_text"> {{ $row->options['size'] }}</div>
 				</div>
                 @endif
 

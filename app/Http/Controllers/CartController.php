@@ -65,6 +65,7 @@ public function check()
 public function showCart()
 {
     $cart = Cart::content();
+    //return $cart;
     return view('pages.cart',compact('cart'));
 }
 public function removeCart($rowId)
