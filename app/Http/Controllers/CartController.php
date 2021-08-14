@@ -227,8 +227,4 @@ public function paymentpage()
     return view('pages.payment',compact('cart'));
 }
 
-
-
-
-
 }
