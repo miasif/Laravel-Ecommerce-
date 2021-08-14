@@ -33,6 +33,7 @@ if($product->discount_price == NULL)
 
  	 //Cart::add($data);
       Cart::add(['id' => $product->id, 'name' => $product->product_name, 'qty' => 1, 'price' => $product->selling_price, 'weight' => 1, 'options' => ['image1' => $product->image_one, 'image2' => $product->image_two, 'image3' => $product->image_three],'options' => ['size' =>''],'options' => ['color' =>'']]);
+
       return response()->json(['success' => 'Successfully Added on your Cart']);
 }
 else{
@@ -43,7 +44,8 @@ else{
     // $data['image'] = $product->image_one;
 
      //Cart::add($data);
-     Cart::add(['id' => $product->id, 'name' => $product->product_name, 'qty' => 1, 'price' => $product->selling_price, 'weight' => 1, 'options' => ['image1' => $product->image_one, 'image2' => $product->image_two, 'image3' => $product->image_three],'options' => ['size' =>''],'options' => ['color' =>'']]);
+     Cart::add(['id' => $product->id, 'name' => $product->product_name, 'qty' => 1, 'price' => $product->discount_price, 'weight' => 1, 'options' => ['image1' => $product->image_one, 'image2' => $product->image_two, 'image3' => $product->image_three],'options' => ['size' =>''],'options' => ['color' =>'']]);
+
      return response()->json(['success' => 'Successfully Added on your Cart']);
 
 }
@@ -115,38 +117,38 @@ return response::json(array(
 }
 
 
-// public function insertCart(Request $request){
-//     $id = $request->product_id;
-//  $product = DB::table('products')->where('id',$id)->first();
-//  $color = $request->color;
-//  $size = $request->size;
-//  $qty = $request->qty;
+public function insertCart(Request $request){
+    $id = $request->product_id;
+ $product = DB::table('products')->where('id',$id)->first();
+ $color = $request->color;
+ $size = $request->size;
+ $qty = $request->qty;
 
-// $data = array();
+$data = array();
 
-// if($product->discount_price == NULL)
-// {
+if($product->discount_price == NULL)
+{
 
 
-//       Cart::add(['id' => $product->id, 'name' => $product->product_name, 'qty' => 1, 'price' => $product->selling_price, 'weight' => 1, 'options' => ['image1' => $product->image_one, 'image2' => $product->image_two, 'image3' => $product->image_three],'options' => ['size' =>''],'options' => ['color' =>'']]);
-//       $notification=array(
-//         'messege'=>'Product Added successfully',
-//         'alert-type'=>'success'
-//          );
-//        return Redirect()->back()->with($notification);
-// }
-// else{
+      Cart::add(['id' => $product->id, 'name' => $product->product_name, 'qty' => 1, 'price' => $product->selling_price, 'weight' => 1, 'options' => ['image1' => $product->image_one, 'image2' => $product->image_two, 'image3' => $product->image_three],'options' => ['size' =>''],'options' => ['color' =>'']]);
+      $notification=array(
+        'messege'=>'Product Added successfully',
+        'alert-type'=>'success'
+         );
+       return Redirect()->back()->with($notification);
+}
+else{
 
-//      Cart::add(['id' => $product->id, 'name' => $product->product_name, 'qty' => 1, 'price' => $product->selling_price, 'weight' => 1, 'options' => ['image1' => $product->image_one, 'image2' => $product->image_two, 'image3' => $product->image_three],'options' => ['size' =>''],'options' => ['color' =>'']]);
-//      $notification=array(
-//         'messege'=>'Product Added successfully',
-//         'alert-type'=>'success'
-//          );
-//        return Redirect()->back()->with($notification);
+     Cart::add(['id' => $product->id, 'name' => $product->product_name, 'qty' => 1, 'price' => $product->discount_price, 'weight' => 1, 'options' => ['image1' => $product->image_one, 'image2' => $product->image_two, 'image3' => $product->image_three],'options' => ['size' =>''],'options' => ['color' =>'']]);
+     $notification=array(
+        'messege'=>'Product Added successfully',
+        'alert-type'=>'success'
+         );
+       return Redirect()->back()->with($notification);
 
-// }
+}
 
-// }
+}
 
 
 public function checkout()

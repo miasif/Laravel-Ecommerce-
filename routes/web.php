@@ -15,7 +15,7 @@ use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\Admin\UserRoleController;
 use App\Http\Controllers\Admin\SettingController;
-use App\Http\Controllers\Admin\ReturnController; 
+use App\Http\Controllers\Admin\ReturnController;
 use App\Http\Controllers\CampaignController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\FrontProductController;
@@ -121,9 +121,7 @@ Route::get('remove/cart/{rowId}', [CartController::class,'removeCart']);
 Route::post('update/cart/item', [CartController::class,'updateCart'])->name('update.cartitem');
 
 Route::get('/cart/product/view/{id}', [CartController::class,'viewProduct']);
-Route::post('insert/into/cart/', 'CartController@insertCart')->name('insert.into.cart');
-
-
+Route::post('insert/into/cart',[CartController::class,'insertCart'])->name('insert.into.cart');
 
 Route::get('user/checkout/',  [CartController::class,'checkout'])->name('user.checkout');
 Route::get('user/wishlist/',  [CartController::class,'wishlist'])->name('user.wishlist');
