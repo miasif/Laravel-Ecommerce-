@@ -34,11 +34,7 @@ class SettingController extends Controller
         $data['instagram'] = $request->instagram;
         $data['twitter'] = $request->twitter;
         DB::table('sitesetting')->where('id',$id)->update($data);
-     
 
-
-
-        DB::table('sitesetting')->where('id',$id)->update($data);
      $notification=array(
                'messege'=>'SiteSetting Updated Successfully',
                'alert-type'=>'success'

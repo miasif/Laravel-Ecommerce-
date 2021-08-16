@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\UserRoleController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\ReturnController;
 use App\Http\Controllers\CampaignController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\FrontProductController;
 use App\Http\Controllers\WishlistController;
@@ -216,6 +217,16 @@ Route::get('admin/all/return',[ReturnController::class,'allReturn'])->name('admi
 //Campaign
 
 Route::get('campaigns',[CampaignController::class,'campaigns'])->name('campaigns');
+
+//Stock admin.product.stock
+Route::get('admin/product/stock',[UserRoleController::class,'productStock'])->name('admin.product.stock');
+
+//Contact
+Route::get('contact/page',[ContactController::class,'contact'])->name('contact.page');
+Route::post('contact/form',[ContactController::class,'contactStore'])->name('contact.form');
+Route::get('all/message',[ContactController::class,'allMessage'])->name('all.message');
+
+
 
 
 

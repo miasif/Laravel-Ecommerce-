@@ -52,34 +52,34 @@
 
 
                    @if($row->product == 1)
-                   <span class="badge btn-warning">product </span>
+                   <span class="badge btn-warning">Product </span>
                   @else
                   @endif
 
 
 
                    @if($row->blog == 1)
-                   <span class="badge btn-primary">blog </span>
+                   <span class="badge btn-primary">Blog </span>
                   @else
                   @endif
 
 
 
                    @if($row->order == 1)
-                   <span class="badge btn-success">order </span>
+                   <span class="badge btn-success">Order </span>
                   @else
                   @endif
 
 
 
                    @if($row->other == 1)
-                   <span class="badge btn-danger">other </span>
+                   <span class="badge btn-danger">Other </span>
                   @else
                   @endif
 
 
                    @if($row->report == 1)
-                   <span class="badge btn-info">report </span>
+                   <span class="badge btn-info">Report </span>
                   @else
                   @endif
 
@@ -92,26 +92,31 @@
 
 
                    @if($row->return == 1)
-                   <span class="badge btn-primary">return </span>
+                   <span class="badge btn-primary">Return </span>
                   @else
                   @endif
 
 
                     @if($row->contact == 1)
-                   <span class="badge btn-success">contact </span>
+                   <span class="badge btn-success">Contact </span>
                   @else
                   @endif
 
 
                     @if($row->comment == 1)
-                   <span class="badge btn-danger">comment </span>
+                   <span class="badge btn-danger">Comment </span>
                   @else
                   @endif
 
                     @if($row->setting == 1)
-                   <span class="badge btn-info">setting </span>
+                   <span class="badge btn-info">Setting </span>
                   @else
                   @endif
+
+                  @if($row->stock == 1)
+                  <span class="badge btn-info">Stock </span>
+                 @else
+                 @endif
 
 
 

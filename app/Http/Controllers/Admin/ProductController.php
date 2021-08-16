@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
@@ -29,16 +28,16 @@ class ProductController extends Controller
         $brand = DB::table('brands')->get();
         return view('admin.product.create',compact('category','brand'));
     }
-    
+
     public function getSubcat($category_id)
     {
         $cat = DB::table('subcategories')->where('category_id',$category_id)->get();
         return json_encode($cat);
     }
-    
+
     public function storeProduct(Request $request)
     {
-        
+
         $data=array();
         $data['product_name']=$request->product_name;
         $data['product_code']=$request->product_code;
@@ -87,8 +86,8 @@ class ProductController extends Controller
                  );
                return Redirect()->back()->with($notification);
         }
-        
- 
+
+
     }
 
     public function inactive($id)
@@ -109,7 +108,7 @@ class ProductController extends Controller
              );
            return Redirect()->back()->with($notification);
     }
-    
+
     public function deleteProduct($id)
     {
         $product = DB::table('products')->where('id',$id)->first();
@@ -126,7 +125,7 @@ class ProductController extends Controller
              );
             return Redirect()->back()->with($notification);
     }
-    
+
     public function viewProduct($id)
     {
         $product = DB::table('products')
@@ -136,7 +135,7 @@ class ProductController extends Controller
         ->select('products.*','categories.category_name','subcategories.subcategory_name','brands.brand_name')
         ->where('products.id',$id)
         ->first();
-      
+
        return view('admin.product.show',compact('product'));
     }
 
@@ -144,7 +143,7 @@ class ProductController extends Controller
     {
         $product = DB::table('products')->where('id',$id)->first();
         return view('admin.product.edit',compact('product'));
-       
+
     }
     public function updateProductWithoutPhoto(Request $request,$id)
     {
@@ -168,7 +167,7 @@ class ProductController extends Controller
         $data['trend']=$request->trend;
         $data['mid_slider']=$request->mid_slider;
         $data['hot_new']=$request->hot_new;
-       
+
          $update = DB::table('products')->where('id',$id)->update($data);
         if( $update )
         {
@@ -186,8 +185,8 @@ class ProductController extends Controller
                  );
                  return Redirect()->route('all.product')->with($notification);
         }
-        
-       
+
+
     }
     public function updateProductPhoto(Request $request,$id)
     {
@@ -252,11 +251,11 @@ class ProductController extends Controller
                 );
               return Redirect()->route('all.product')->with($notification);
         }
-        
-        
+
+
 
     }
-    
- 
+
+
 
 }
