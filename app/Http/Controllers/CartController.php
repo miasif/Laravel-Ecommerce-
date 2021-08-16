@@ -11,57 +11,57 @@ use Session;
 
 class CartController extends Controller
 {
-    public function addCart($id){
+//     public function addCart($id){
 
 
-    $product = DB::table('products')->where('id',$id)->first();
-    $data = array();
-    // $data = $product->id;
-    // $data = $product->product_quantity;
-    // $data = $product->	selling_price;
-    // $data = $product->discount_price;
-    // $data = $product->image_one;
+//     $product = DB::table('products')->where('id',$id)->first();
 
-if($product->discount_price == NULL)
-{
+//     // $data = $product->id;
+//     // $data = $product->product_quantity;
+//     // $data = $product->	selling_price;
+//     // $data = $product->discount_price;
+//     // $data = $product->image_one;
 
-    // $data['id'] = $product->id;
- 	// $data['name'] = $product->product_name;
- 	// $data['qty'] = 1;
- 	// $data['price'] = $product->selling_price;
- 	// $data['image'] = $product->image_one;
+// if($product->discount_price == NULL)
+// {
 
- 	 //Cart::add($data);
-      Cart::add(['id' => $product->id, 'name' => $product->product_name, 'qty' => 1, 'price' => $product->selling_price, 'weight' => 1, 'options' => ['image1' => '$product->image_one', 'image2' => '$product->image_two', 'image3' => '$product->image_three', 'size' =>'$product->size']]);
+//     // $data['id'] = $product->id;
+//  	// $data['name'] = $product->product_name;
+//  	// $data['qty'] = 1;
+//  	// $data['price'] = $product->selling_price;
+//  	// $data['image'] = $product->image_one;
 
-      return response()->json(['success' => 'Successfully Added on your Cart']);
-}
-else{
-    // $data['id'] = $product->id;
-    // $data['name'] = $product->product_name;
-    // $data['qty'] = 1;
-    // $data['price'] = $product->selling_price;
-    // $data['image'] = $product->image_one;
+//  	 //Cart::add($data);
+//       Cart::add(['id' => $product->id, 'name' => $product->product_name, 'qty' => 1, 'price' => $product->selling_price, 'weight' => 1 ]);
 
-     //Cart::add($data);
-     Cart::add(['id' => $product->id, 'name' => $product->product_name, 'qty' => 1, 'price' => $product->discount_price, 'weight' => 1, 'options' => ['image1' => '$product->image_one', 'image2' => '$product->image_two', 'image3' => '$product->image_three', 'size' =>'$product->size']]);
+//       return response()->json(['success' => 'Successfully Added on your Cart']);
+// }
+// else{
+//     // $data['id'] = $product->id;
+//     // $data['name'] = $product->product_name;
+//     // $data['qty'] = 1;
+//     // $data['price'] = $product->selling_price;
+//     // $data['image'] = $product->image_one;
 
-
-     return response()->json(['success' => 'Successfully Added on your Cart']);
-
-}
+//      //Cart::add($data);
+//      Cart::add(['id' => $product->id, 'name' => $product->product_name, 'qty' => 1, 'price' => $product->discount_price, 'weight' => 1 ]);
 
 
+//      return response()->json(['success' => 'Successfully Added on your Cart']);
+
+// }
 
 
-}
 
-public function check()
-{
-    $content = Cart::content();
 
-    return response()->json($content);
-}
+// }
+
+// public function check()
+// {
+//     $content = Cart::content();
+
+//     return response()->json($content);
+// }
 
 public function showCart()
 {
@@ -133,7 +133,8 @@ if($product->discount_price == NULL)
 {
 
 
-      Cart::add(['id' => $product->id, 'name' => $product->product_name, 'qty' => 1, 'price' => $product->selling_price, 'weight' => 1, 'options' => ['image1' => $product->image_one, 'image2' => $product->image_two, 'image3' => $product->image_three],'options' => ['size' =>''],'options' => ['color' =>'']]);
+    Cart::add(['id' => $product->id, 'name' => $product->product_name, 'qty' => $request->qty, 'price' => $product->selling_price, 'weight' => 1, 'options' => ['image1' => $product->image_one, 'image2' => $product->image_two, 'image3' => $product->image_three,'size' =>$request->size,'color' =>$request->color]]);
+
       $notification=array(
         'messege'=>'Product Added successfully',
         'alert-type'=>'success'
@@ -142,7 +143,8 @@ if($product->discount_price == NULL)
 }
 else{
 
-     Cart::add(['id' => $product->id, 'name' => $product->product_name, 'qty' => 1, 'price' => $product->discount_price, 'weight' => 1, 'options' => ['image1' => $product->image_one, 'image2' => $product->image_two, 'image3' => $product->image_three],'options' => ['size' =>''],'options' => ['color' =>'']]);
+    Cart::add(['id' => $product->id, 'name' => $product->product_name, 'qty' => $request->qty, 'price' => $product->discount_price, 'weight' => 1, 'options' => ['image1' => $product->image_one, 'image2' => $product->image_two, 'image3' => $product->image_three,'size' =>$request->size,'color' =>$request->color]]);
+
      $notification=array(
         'messege'=>'Product Added successfully',
         'alert-type'=>'success'

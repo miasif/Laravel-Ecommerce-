@@ -39,7 +39,8 @@ class FrontProductController extends Controller
     {
 
 
-          Cart::add(['id' => $product->id, 'name' => $product->product_name, 'qty' => $request->qty, 'price' => $product->selling_price, 'weight' => 1, 'options' => ['image1' => $product->image_one, 'image2' => $product->image_two, 'image3' => $product->image_three],'options' => ['size' =>$request->size],'options' => ['color' =>$request->color]]);
+        Cart::add(['id' => $product->id, 'name' => $product->product_name, 'qty' => $request->qty, 'price' => $product->selling_price, 'weight' => 1, 'options' => ['image1' => $product->image_one, 'image2' => $product->image_two, 'image3' => $product->image_three,'size' =>$request->size,'color' =>$request->color]]);
+
           $notification=array(
             'messege'=>'Product Successfully Added',
             'alert-type'=>'success'
@@ -48,7 +49,7 @@ class FrontProductController extends Controller
     }
     else{
 
-         Cart::add(['id' => $product->id, 'name' => $product->product_name, 'qty' => $request->qty, 'price' => $product->selling_price, 'weight' => 1, 'options' => ['image1' => $product->image_one, 'image2' => $product->image_two, 'image3' => $product->image_three],'options' => ['size' =>$request->size],'options' => ['color' =>$request->color]]);
+         Cart::add(['id' => $product->id, 'name' => $product->product_name, 'qty' => $request->qty, 'price' => $product->discount_price, 'weight' => 1, 'options' => ['image1' => $product->image_one, 'image2' => $product->image_two, 'image3' => $product->image_three,'size' =>$request->size,'color' =>$request->color]]);
          $notification=array(
             'messege'=>'Product Successfully Added',
             'alert-type'=>'success'

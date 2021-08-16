@@ -1522,24 +1522,24 @@ $product = DB::table('products')->where('category_id',$catid)->where('status',1)
                      <div class="form-group">
                         <label for="exampleInputcolor">Color</label>
                         <select name="color" class="form-control" id="color">
-              
+
                          </select>
-                         
-                     </div>   
-            
+
+                     </div>
+
              <div class="form-group">
                         <label for="exampleInputcolor">Size</label>
                         <select name="size" class="form-control" id="size">
-               
+
                          </select>
-                         
-                     </div>   
+
+                     </div>
                   <div class="form-group">
                      <label for="exampleInputcolor">Quantity</label>
                      <input type="number" class="form-control" name="qty" value="1">
                   </div>
                   <button type="submit" class="btn btn-primary">Add to Cart </button>
-                  </form> 
+                  </form>
                </div>
             </div>
          </div>
@@ -1565,7 +1565,7 @@ $product = DB::table('products')->where('category_id',$catid)->where('status',1)
 <script type="text/javascript">
     function productview(id){
         $.ajax({
-         url: "{{ url('/cart/product/view/') }}/"+id, 
+         url: "{{ url('/cart/product/view/') }}/"+id,
          type: "GET",
          dataType:"json",
          success:function(data){
@@ -1579,46 +1579,28 @@ $product = DB::table('products')->where('category_id',$catid)->where('status',1)
 
       var d = $('select[name="color"]').empty();
        $.each(data.color,function(key,value){
-       $('select[name="color"]').append('<option value="'+value+'">'+value+'</option>'); 
+       $('select[name="color"]').append('<option value="'+value+'">'+value+'</option>');
         });
 
           var d = $('select[name="size"]').empty();
        $.each(data.size,function(key,value){
-       $('select[name="size"]').append('<option value="'+value+'">'+value+'</option>'); 
+       $('select[name="size"]').append('<option value="'+value+'">'+value+'</option>');
         });
 
 
 
-         }  
+         }
         })
     }
 
 
 </script>
-<script type="text/javascript">
-   <script type="text/javascript">
-      function productview(id){
-          $.ajax({
-           url: " url('/cart/product/view/"+id,
-           type: "GET",
-           dataType:"json",
-           success:function(data){
-            $(#pname).text(data.product_name)
-   
-   
-   
-           }
-          })
-      }
-   
-   
-</script>
-<!--
+
    <script type="text/javascript">
       $(document).ready(function(){
         $('.addcart').on('click', function(){
            var id = $(this).data('id');
-   
+
            if (id) {
                $.ajax({
                   //  alert(id),
@@ -1637,9 +1619,9 @@ $product = DB::table('products')->where('category_id',$catid)->where('status',1)
                        toast.addEventListener('mouseleave', Swal.resumeTimer)
                      }
                    })
-   
+
                 if ($.isEmptyObject(data.error)) {
-   
+
                    Toast.fire({
                      icon: 'success',
                      title: data.success
@@ -1650,26 +1632,26 @@ $product = DB::table('products')->where('category_id',$catid)->where('status',1)
                      title: data.error
                    })
                 }
-   
-   
+
+
                    },
                });
-   
+
            }else{
                alert('danger');
            }
         });
-   
+
       });
    </script> -->
 <script type="text/javascript">
    $(document).ready(function(){
      $('.addwishlist').on('click', function(){
         var id = $(this).data('id');
-   
+
        // alert(id)
         if (id) {
-   
+
             $.ajax({
                //  alert(id),
                url: "add/wishlist/"+id,
@@ -1687,9 +1669,9 @@ $product = DB::table('products')->where('category_id',$catid)->where('status',1)
                     toast.addEventListener('mouseleave', Swal.resumeTimer)
                   }
                 })
-   
+
              if ($.isEmptyObject(data.error)) {
-   
+
                 Toast.fire({
                   icon: 'success',
                   title: data.success
@@ -1700,18 +1682,18 @@ $product = DB::table('products')->where('category_id',$catid)->where('status',1)
                   title: data.error
                 })
              }
-   
-   
+
+
                 },
             });
-   
+
         }else{
             alert('danger');
         }
      });
-   
+
    });
-   
-   
+
+
 </script>
 @endsection

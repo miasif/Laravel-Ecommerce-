@@ -12,7 +12,7 @@ $category = DB::table('categories')->get();
                 <div class="row">
                     <div class="col">
 
-                        <div class="main_nav_content d-flex flex-row">
+                        <div class="main_nav_content d-flex flex-row" >
 
                             <!-- Categories Menu -->
 
