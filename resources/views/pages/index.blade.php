@@ -1596,7 +1596,7 @@ $product = DB::table('products')->where('category_id',$catid)->where('status',1)
 
 </script>
 
-   <script type="text/javascript">
+   <!-- <script type="text/javascript">
       $(document).ready(function(){
         $('.addcart').on('click', function(){
            var id = $(this).data('id');
@@ -1643,7 +1643,7 @@ $product = DB::table('products')->where('category_id',$catid)->where('status',1)
         });
 
       });
-   </script> -->
+   </script> --> -->
 <script type="text/javascript">
    $(document).ready(function(){
      $('.addwishlist').on('click', function(){
