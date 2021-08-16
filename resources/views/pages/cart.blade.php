@@ -42,7 +42,7 @@
                 @else
                 <div class="cart_item_color cart_info_col">
 					<div class="cart_item_title">Size</div>
-					<div class="cart_item_text"> {{ $row->options['size'] }}</div>
+					<div class="cart_item_text"> {{ $row->options->size }}</div>
 				</div>
                 @endif
 

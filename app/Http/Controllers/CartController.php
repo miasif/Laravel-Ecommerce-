@@ -32,7 +32,7 @@ if($product->discount_price == NULL)
  	// $data['image'] = $product->image_one;
 
  	 //Cart::add($data);
-      Cart::add(['id' => $product->id, 'name' => $product->product_name, 'qty' => 1, 'price' => $product->selling_price, 'weight' => 1, 'options' => ['image1' => $product->image_one, 'image2' => $product->image_two, 'image3' => $product->image_three], 'size' =>$product->size, 'color' =>$product->color]);
+      Cart::add(['id' => $product->id, 'name' => $product->product_name, 'qty' => 1, 'price' => $product->selling_price, 'weight' => 1, 'options' => ['image1' => '$product->image_one', 'image2' => '$product->image_two', 'image3' => '$product->image_three', 'size' =>'$product->size']]);
 
       return response()->json(['success' => 'Successfully Added on your Cart']);
 }
@@ -44,7 +44,7 @@ else{
     // $data['image'] = $product->image_one;
 
      //Cart::add($data);
-     Cart::add(['id' => $product->id, 'name' => $product->product_name, 'qty' => 1, 'price' => $product->discount_price, 'weight' => 1, 'options' => ['image1' => $product->image_one, 'image2' => $product->image_two, 'image3' => $product->image_three], 'size' =>$product->size, 'color' =>$product->color]);
+     Cart::add(['id' => $product->id, 'name' => $product->product_name, 'qty' => 1, 'price' => $product->discount_price, 'weight' => 1, 'options' => ['image1' => '$product->image_one', 'image2' => '$product->image_two', 'image3' => '$product->image_three', 'size' =>'$product->size']]);
 
 
      return response()->json(['success' => 'Successfully Added on your Cart']);
@@ -67,6 +67,7 @@ public function showCart()
 {
     $cart = Cart::content();
     //var_dump($cart);
+    //return ($cart);
      return view('pages.cart',compact('cart'));
 }
 public function removeCart($rowId)
