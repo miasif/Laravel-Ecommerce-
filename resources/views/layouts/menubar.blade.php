@@ -7,12 +7,12 @@ $category = DB::table('categories')->get();
 
 
 
-<nav class="main_nav">
+<nav class="main_nav" style="background-color:#CCFFFF;">
             <div class="container">
                 <div class="row">
                     <div class="col">
 
-                        <div class="main_nav_content d-flex flex-row" >
+                        <div class="main_nav_content d-flex flex-row"  >
 
                             <!-- Categories Menu -->
 
@@ -49,7 +49,7 @@ $category = DB::table('categories')->get();
 
                             <!-- Main Nav Menu -->
 
-                            <div class="main_nav_menu ml-auto">
+                            <div class="main_nav_menu ml-auto" >
                                 <ul class="standard_dropdown main_nav_dropdown">
                                     <li><a href="{{url('/')}}">Home<i class="fas fa-chevron-down"></i></a></li>
                                     <li class="hassubs">
