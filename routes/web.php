@@ -17,7 +17,6 @@ use App\Http\Controllers\Admin\UserRoleController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\ReturnController;
 use App\Http\Controllers\CampaignController;
-
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FrontController;
