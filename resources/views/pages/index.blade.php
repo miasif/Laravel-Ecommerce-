@@ -59,12 +59,12 @@ $hot = DB::table('products')
    </div>
 </div>
 <!-- Deals of the week -->
-<div class="deals_featured">
-   <div class="container">
-      <div class="row">
+<div class="deals_featured" >
+   <div class="container" >
+      <div class="row" >
          <div class="col d-flex flex-lg-row flex-column align-items-center justify-content-start">
             <!-- Deals -->
-            <div class="deals">
+            <div class="deals" style="background-color:#CCFFFF;">
                <div class="deals_title">Deals of the Week</div>
                <div class="deals_slider_container">
                   <!-- Deals Slider -->
@@ -1461,7 +1461,7 @@ $product = DB::table('products')->where('category_id',$catid)->where('status',1)
    </div>
 </div>
 <!-- Newsletter -->
-<div class="newsletter">
+<div class="newsletter" style="background-color:#CCFFFF;">
    <div class="container">
       <div class="row">
          <div class="col">
@@ -1644,7 +1644,7 @@ $product = DB::table('products')->where('category_id',$catid)->where('status',1)
         });
 
       });
-   </script> --> -->
+   </script> -->
 <script type="text/javascript">
    $(document).ready(function(){
      $('.addwishlist').on('click', function(){
