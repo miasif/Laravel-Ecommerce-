@@ -85,7 +85,7 @@
         @if(Auth::user()->category == 1)
         <a href="#" class="sl-menu-link">
           <div class="sl-menu-item">
-            <i class="menu-item-icon ion-ios-pie-outline tx-20"></i>
+            <span class="iconify" data-icon="bx:bx-category-alt" style="font-size: 20px;"></span>
             <span class="menu-item-label">Category</span>
             <i class="menu-item-arrow fa fa-angle-down"></i>
           </div><!-- menu-item -->
@@ -101,7 +101,7 @@
         @if(Auth::user()->coupon == 1)
         <a href="#" class="sl-menu-link">
           <div class="sl-menu-item">
-            <i class="menu-item-icon icon ion-ios-gear-outline tx-24"></i>
+            <span class="iconify" data-icon="gridicons:coupon" style="font-size: 20px;"></span>
             <span class="menu-item-label">Coupons</span>
             <i class="menu-item-arrow fa fa-angle-down"></i>
           </div><!-- menu-item -->
@@ -115,7 +115,8 @@
         @if(Auth::user()->product == 1)
         <a href="#" class="sl-menu-link">
           <div class="sl-menu-item">
-            <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-20"></i>
+            <span class="iconify" data-icon="la:product-hunt" style="font-size: 20px;"></span>
+
             <span class="menu-item-label">Products</span>
             <i class="menu-item-arrow fa fa-angle-down"></i>
           </div><!-- menu-item -->
@@ -130,7 +131,7 @@
         @if(Auth::user()->order == 1)
         <a href="#" class="sl-menu-link">
           <div class="sl-menu-item">
-            <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-20"></i>
+            <span class="iconify" data-icon="icon-park:transaction-order" style="font-size: 20px;"></span>
             <span class="menu-item-label">Orders</span>
             <i class="menu-item-arrow fa fa-angle-down"></i>
           </div><!-- menu-item -->
@@ -148,7 +149,7 @@
         @if(Auth::user()->blog == 1)
         <a href="#" class="sl-menu-link">
           <div class="sl-menu-item">
-            <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-20"></i>
+            <span class="iconify" data-icon="uit:blogger-alt" style="font-size: 20px;"></span>
             <span class="menu-item-label">Blog</span>
             <i class="menu-item-arrow fa fa-angle-down"></i>
           </div><!-- menu-item -->
@@ -164,7 +165,7 @@
         @if(Auth::user()->other == 1)
         <a href="#" class="sl-menu-link">
           <div class="sl-menu-item">
-            <i class="menu-item-icon icon ion-ios-filing-outline tx-24"></i>
+            <span class="iconify" data-icon="icon-park-outline:other" style="font-size: 20px;"></span>
             <span class="menu-item-label">Others</span>
             <i class="menu-item-arrow fa fa-angle-down"></i>
           </div><!-- menu-item -->
@@ -178,7 +179,7 @@
         @if(Auth::user()->report == 1)
         <a href="#" class="sl-menu-link">
           <div class="sl-menu-item">
-            <i class="menu-item-icon icon ion-ios-filing-outline tx-24"></i>
+            <span class="iconify" data-icon="carbon:report" style="font-size: 20px;"></span>
             <span class="menu-item-label">Reports</span>
             <i class="menu-item-arrow fa fa-angle-down"></i>
           </div><!-- menu-item -->
@@ -195,7 +196,7 @@
         @if(Auth::user()->role == 1)
         <a href="#" class="sl-menu-link">
           <div class="sl-menu-item">
-            <i class="menu-item-icon icon ion-ios-filing-outline tx-24"></i>
+            <span class="iconify" data-icon="carbon:user-role" style="font-size: 20px;"></span>
             <span class="menu-item-label">User Role</span>
             <i class="menu-item-arrow fa fa-angle-down"></i>
           </div><!-- menu-item -->
@@ -211,7 +212,7 @@
         @if(Auth::user()->return == 1)
         <a href="#" class="sl-menu-link">
           <div class="sl-menu-item">
-            <i class="menu-item-icon icon ion-ios-filing-outline tx-24"></i>
+            <span class="iconify" data-icon="tabler:truck-return" style="font-size: 20px;"></span>
             <span class="menu-item-label">Return Order</span>
             <i class="menu-item-arrow fa fa-angle-down"></i>
           </div><!-- menu-item -->
@@ -226,7 +227,7 @@
         @if(Auth::user()->stock == 1)
          <a href="#" class="sl-menu-link">
           <div class="sl-menu-item">
-            <i class="menu-item-icon icon ion-ios-filing-outline tx-24"></i>
+            <span class="iconify" data-icon="healthicons:rdt-result-out-stock-negative" style="font-size: 20px;"></span>
             <span class="menu-item-label">Product Stocks</span>
             <i class="menu-item-arrow fa fa-angle-down"></i>
           </div><!-- menu-item -->
@@ -243,7 +244,7 @@
      @if(Auth::user()->contact == 1)
         <a href="#" class="sl-menu-link">
           <div class="sl-menu-item">
-            <i class="menu-item-icon icon ion-ios-filing-outline tx-24"></i>
+            <span class="iconify" data-icon="fluent:contact-card-20-regular" style="font-size: 20px;"></span>
             <span class="menu-item-label">Contact Message</span>
             <i class="menu-item-arrow fa fa-angle-down"></i>
           </div><!-- menu-item -->
@@ -257,7 +258,7 @@
         @if(Auth::user()->comment == 1)
         <a href="#" class="sl-menu-link">
           <div class="sl-menu-item">
-            <i class="menu-item-icon icon ion-ios-filing-outline tx-24"></i>
+            <span class="iconify" data-icon="fa-regular:comment-dots" style="font-size: 20px;"></span>
             <span class="menu-item-label">Product Comments</span>
             <i class="menu-item-arrow fa fa-angle-down"></i>
           </div><!-- menu-item -->
@@ -272,7 +273,7 @@
         @if(Auth::user()->setting == 1)
         <a href="#" class="sl-menu-link">
           <div class="sl-menu-item">
-            <i class="menu-item-icon icon ion-ios-filing-outline tx-24"></i>
+            <span class="iconify" data-icon="ant-design:setting-outlined" style="font-size: 20px;"></span>
             <span class="menu-item-label">Site Setting</span>
             <i class="menu-item-arrow fa fa-angle-down"></i>
           </div><!-- menu-item -->
@@ -502,7 +503,7 @@
     <script src="{{asset('backend/lib/datatables/jquery.dataTables.js')}}"></script>
     <script src="{{asset('backend/lib/datatables-responsive/dataTables.responsive.js')}}"></script>
     <script src="{{asset('backend/lib/select2/js/select2.min.js')}}"></script>
-
+    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
     <script>
       $(function(){
         'use strict';
