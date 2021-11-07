@@ -12,7 +12,7 @@
 					<div class="contact_form_container">
 						<div class="contact_form_title text-center">Sign In</div>
                   <form action="{{route('login')}}" id="contact_form" method="post">
-                                    @csrf 
+                                    @csrf
                         <div class="form-group">
                            <label for="exampleInputEmail1">Email or Phone</label>
                               <input type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Enter email" required="">
@@ -30,9 +30,9 @@
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror  
+                                @enderror
                            </div>
-							
+
 							<div class="contact_form_button">
 								<button type="submit" class="btn btn-info">Login</button>
 							</div>
@@ -40,7 +40,7 @@
                         <br>
                         <a href="{{route('password.request')}}">I forget my password</a>    <br>   <br>
                         <button type="submit" class="btn btn-primary btn-block"><i class="fab fa-facebook-square"></i> Login with Facebook</button>
-                        <button type="submit" class="btn btn-danger btn-block"><i class="fab fa-google"></i> Login with Google</button>
+                        <a href="{{ url('/auth/redirect/google') }}" class="btn btn-danger btn-block"><i class="fab fa-google"></i> Login with Google </a>
 
 					</div>
 				</div>
@@ -50,7 +50,7 @@
 						<div class="contact_form_title text-center" >Sign Up</div>
 
                                  <form action="{{route('register')}}" id="contact_form" method="post">
-                                    @csrf 
+                                    @csrf
                         <div class="form-group">
                            <label for="exampleInputEmail1">Full Name</label>
                               <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name" placeholder="Enter Your Full Name " required="">
@@ -75,12 +75,12 @@
                            <label for="exampleInputEmail1">Confirm Password</label>
                               <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="password_confirmation" placeholder="Enter Re-Type password" required="">
                              </div>
-							
+
 							<div class="contact_form_button">
 								<button type="submit" class="btn btn-info">Sign Up</button>
 							</div>
-							
-							
+
+
 						</form>
 
 					</div>

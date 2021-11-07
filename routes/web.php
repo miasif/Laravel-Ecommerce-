@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\UserRoleController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\ReturnController;
 use App\Http\Controllers\CampaignController;
+use App\Http\Controllers\SocialController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\FrontProductController;
@@ -28,6 +29,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {return view('pages.index');});
+//Social Login
+ Route::get('/auth/redirect/{provider}', [SocialController::class,'redirect']);
+ Route::get('/callback/{provider}', [SocialController::class,'callback']);
+
 //auth & user
 Auth::routes(['verify' => true]);
 Route::get('/home', [HomeController::class,'index'])->name('home');

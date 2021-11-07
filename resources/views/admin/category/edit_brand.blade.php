@@ -4,7 +4,7 @@
 
     <!-- ########## START: MAIN PANEL ########## -->
     <div class="sl-mainpanel">
-   
+
 
       <div class="sl-pagebody">
         <div class="sl-page-title">
@@ -25,7 +25,7 @@
 
               <form method="post" action="{{url('update/brand/'.$brand->id)}}" enctype="multipart/form-data" >
                   @csrf
-              <div class="modal-body pd-20">   
+              <div class="modal-body pd-20">
                 <div class="form-group">
                 <label for="exampleInputEmail1">Brand Name</label>
                 <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$brand->brand_name}}" name="brand_name">
@@ -47,13 +47,13 @@
             </div>
             </form>
 
-      
 
-  
+
+
     </div><!-- sl-mainpanel -->
     <!-- ########## END: MAIN PANEL ########## -->
 
-      
+
 
 
 @endsection

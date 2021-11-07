@@ -23,11 +23,11 @@ $setting = DB::table('sitesetting')->first();
       <script src="https://js.stripe.com/v3/"></script>
    </head>
    <body>
-      <div class="super_container">
+      <div class="super_container" >
          <!-- Header -->
-         <header class="header">
+         <header class="header" >
          <!-- Top Bar -->
-         <div class="top_bar">
+         <div class="top_bar" style="background-color:#CCFFFF;">
             <div class="container">
                <div class="row">
                   <div class="col d-flex flex-row">
@@ -180,7 +180,7 @@ $setting = DB::table('sitesetting')->first();
          @yield('content')
          @php
          $setting = DB::table('sitesetting')->first();
-         
+
           @endphp
          <!-- Footer -->
          <footer class="footer">
@@ -202,7 +202,7 @@ $setting = DB::table('sitesetting')->first();
                               <li><a href="{{ $setting->twitter }}"><i class="fab fa-twitter"></i></a></li>
                               <li><a href="{{ $setting->youtube }}"><i class="fab fa-youtube"></i></a></li>
                               <li><a href="{{ $setting->instagram }}"><i class="fab fa-instagram"></i></a></li>
-                              
+
                            </ul>
                         </div>
                      </div>
@@ -252,7 +252,7 @@ $setting = DB::table('sitesetting')->first();
             </div>
          </footer>
          <!-- Copyright -->
-         <div class="copyright">
+         <div class="copyright" style="background-color:#CCFFFF;">
             <div class="container">
                <div class="row">
                   <div class="col">

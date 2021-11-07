@@ -20,6 +20,8 @@ use Composer\Semver\VersionParser;
 
 
 
+
+
 class InstalledVersions
 {
 private static $installed = array (
@@ -30,7 +32,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'bec603d722f7b45dbf8725cc5c8c8196b06a93d0',
+    'reference' => '59b5a25e1a8cea1c8da65bcf6211b022492b1de6',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -183,6 +185,24 @@ private static $installed = array (
       array (
       ),
       'reference' => 'd0190b156bcca848d401fb80f31f504f37141c8d',
+    ),
+    'guzzlehttp/guzzle' => 
+    array (
+      'pretty_version' => '7.3.0',
+      'version' => '7.3.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '7008573787b430c1c1f650e3722d9bba59967628',
+    ),
+    'guzzlehttp/promises' => 
+    array (
+      'pretty_version' => '1.4.1',
+      'version' => '1.4.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '8e7d04f1f6450fef59366c399cfad4b9383aa30d',
     ),
     'guzzlehttp/psr7' => 
     array (
@@ -471,7 +491,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'bec603d722f7b45dbf8725cc5c8c8196b06a93d0',
+      'reference' => '59b5a25e1a8cea1c8da65bcf6211b022492b1de6',
     ),
     'laravel/passport' => 
     array (
@@ -481,6 +501,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '011bd500e8ae3d459b692467880a49ff1ecd60c0',
+    ),
+    'laravel/socialite' => 
+    array (
+      'pretty_version' => 'v5.2.4',
+      'version' => '5.2.4.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '59e2f8d9d9663029c7746a92d60bbb7697953bb9',
     ),
     'laravel/tinker' => 
     array (
@@ -553,6 +582,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '3b9dff8aaf7323590c1d2e443db701eb1f9aa0d3',
+    ),
+    'league/oauth1-client' => 
+    array (
+      'pretty_version' => 'v1.10.0',
+      'version' => '1.10.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '88dd16b0cff68eb9167bfc849707d2c40ad91ddc',
     ),
     'league/oauth2-server' => 
     array (
@@ -825,6 +863,22 @@ private static $installed = array (
       'reference' => '8622567409010282b7aeebe4bb841fe98b58dcaf',
     ),
     'psr/event-dispatcher-implementation' => 
+    array (
+      'provided' => 
+      array (
+        0 => '1.0',
+      ),
+    ),
+    'psr/http-client' => 
+    array (
+      'pretty_version' => '1.0.1',
+      'version' => '1.0.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '2dfb5f6c5eff0e91e20e913f8c5452ed95b86621',
+    ),
+    'psr/http-client-implementation' => 
     array (
       'provided' => 
       array (
@@ -1376,7 +1430,6 @@ foreach (self::getInstalled() as $installed) {
 $packages[] = array_keys($installed['versions']);
 }
 
-
 if (1 === \count($packages)) {
 return $packages[0];
 }
@@ -1540,9 +1593,23 @@ return $installed[0]['root'];
 
 
 
+
 public static function getRawData()
 {
+@trigger_error('getRawData only returns the first dataset loaded, which may not be what you expect. Use getAllRawData() instead which returns all datasets for all autoloaders present in the process.', E_USER_DEPRECATED);
+
 return self::$installed;
+}
+
+
+
+
+
+
+
+public static function getAllRawData()
+{
+return self::getInstalled();
 }
 
 
@@ -1568,6 +1635,7 @@ public static function reload($data)
 self::$installed = $data;
 self::$installedByVendor = array();
 }
+
 
 
 

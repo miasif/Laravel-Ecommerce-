@@ -59,12 +59,12 @@ $hot = DB::table('products')
    </div>
 </div>
 <!-- Deals of the week -->
-<div class="deals_featured">
-   <div class="container">
-      <div class="row">
+<div class="deals_featured" >
+   <div class="container" >
+      <div class="row" >
          <div class="col d-flex flex-lg-row flex-column align-items-center justify-content-start">
             <!-- Deals -->
-            <div class="deals">
+            <div class="deals" style="background-color:#CCFFFF;">
                <div class="deals_title">Deals of the Week</div>
                <div class="deals_slider_container">
                   <!-- Deals Slider -->
@@ -324,7 +324,7 @@ $product = DB::table('products')->where('category_id',$catid)->where('status',1)
                                           <input type="radio" name="product_color" style="background:#000000">
                                           <input type="radio" name="product_color" style="background:#999999">
                                        </div>
-                                       <button class="product_cart_button">Add to Cart</button>
+                                       <button id="{{ $row->id }}" class="product_cart_button" data-toggle="modal" data-target="#cartmodal" onclick="productview(this.id)">Add to Cart</button>
                                     </div>
                                  </div>
                                  <button class="addwishlist" data-id="{{$row->id}}">
@@ -400,7 +400,8 @@ $product = DB::table('products')->where('category_id',$catid)->where('status',1)
                                           <input type="radio" name="product_color" style="background:#000000">
                                           <input type="radio" name="product_color" style="background:#999999">
                                        </div>
-                                       <button class="product_cart_button">Add to Cart</button>
+                                       <button id="{{ $row->id }}" class="product_cart_button" data-toggle="modal" data-target="#cartmodal" onclick="productview(this.id)">Add to Cart</button>
+
                                     </div>
                                  </div>
                                  <button class="addwishlist" data-id="{{$row->id}}">
@@ -1168,7 +1169,7 @@ $product = DB::table('products')->where('category_id',$catid)->where('status',1)
                               @else
                               <div class="product_price discount">${{ $row->discount_price }}<span>${{ $row->selling_price }}</span></div>
                               @endif
-                              <a href="" class="btn btn-danger btn-sm">Add to Cart</a>
+                              <a href="" id="{{ $row->id }}" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#cartmodal" onclick="productview(this.id)">Add to Cart</a>
                            </div>
                         </div>
                         <ul class="trends_marks">
@@ -1460,7 +1461,7 @@ $product = DB::table('products')->where('category_id',$catid)->where('status',1)
    </div>
 </div>
 <!-- Newsletter -->
-<div class="newsletter">
+<div class="newsletter" style="background-color:#CCFFFF;">
    <div class="container">
       <div class="row">
          <div class="col">
@@ -1516,7 +1517,7 @@ $product = DB::table('products')->where('category_id',$catid)->where('status',1)
                </div>
                <div class="col-md-4">
                   <form method="post" action="{{ route('insert.into.cart') }}">
-                     @csrf
+                    @csrf
                      <input type="hidden" name="product_id" id="product_id">
 
                      <div class="form-group">
@@ -1643,7 +1644,7 @@ $product = DB::table('products')->where('category_id',$catid)->where('status',1)
         });
 
       });
-   </script> --> -->
+   </script> -->
 <script type="text/javascript">
    $(document).ready(function(){
      $('.addwishlist').on('click', function(){
