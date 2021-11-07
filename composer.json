@@ -8,7 +8,7 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^8.0.1|^7.4.1.",
+        "php": "^8.0.0|^7.4.1.",
         "bumbummen99/shoppingcart": "^4.0",
         "fideloper/proxy": "^4.0",
         "intervention/image": "^2.6",
